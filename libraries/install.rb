@@ -96,7 +96,7 @@ class Chef
               to "#{kb_args[:install_dir]}/kibana-#{kb_args[:version]}"
             end
 
-            node.set['kibana'][kb_args[:name]]['web_dir'] = "#{kb_args[:install_dir]}/current"
+            node.default['kibana'][kb_args[:name]]['web_dir'] = "#{kb_args[:install_dir]}/current"
             node.save unless Chef::Config[:solo]
           end
         end # end case
