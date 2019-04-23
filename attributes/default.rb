@@ -39,8 +39,8 @@ default['kibana']['webserver_scheme'] = 'http://'
 # parent directory of install_dir.  This is required because of the `file` method.
 default['kibana']['install_path'] = '/opt'
 
-# the actual installation directory of kibana. If using the `file` method this should be left as is. "#{node['kibana']['install_path']}/kibana"
-default['kibana']['install_dir'] = "/opt/kibana"
+# the actual installation directory of kibana. If using the `file` method this should be left as is. 
+default['kibana']['install_dir'] = "#{node['kibana']['install_path']}/kibana"
 
 # used to configure proxy information for the webserver to proxy ES calls.
 default['kibana']['es_server'] = '127.0.0.1'
