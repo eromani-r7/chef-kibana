@@ -64,8 +64,8 @@ class Chef
           end
 
         when 'nginx'
-          node.set['nginx']['default_site_enabled'] = resources[:default_site_enabled]
-          node.set['nginx']['install_method'] = node['kibana']['nginx']['install_method']
+          node.default['nginx']['default_site_enabled'] = resources[:default_site_enabled]
+          node.default['nginx']['install_method'] = node['kibana']['nginx']['install_method']
           @run_context.include_recipe 'chef_nginx'
 
           template "#{node['nginx']['dir']}/sites-available/#{resources[:name]}" do
